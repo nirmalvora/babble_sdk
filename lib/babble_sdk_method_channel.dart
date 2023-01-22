@@ -18,4 +18,9 @@ class MethodChannelBabbleSdk extends BabbleSdkPlatform {
   Future<void> triggerSurvey(Map<String, String> params) async {
     methodChannel.invokeMethod<void>('trigger_survey', params);
   }
+
+  @override
+  Future<void> setCustomerId(Map<String, String> params) async {
+    methodChannel.invokeMethod<void>('set_customer_id', params);
+  }
 }

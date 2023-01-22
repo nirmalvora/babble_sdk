@@ -28,19 +28,27 @@ class BabbleSdkPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     when(call.method){
       "init" ->{
-        val apiKey=call.argument("api_key") as String?
-        if(apiKey!=null&&apiKey.isNotEmpty()){
-          BabbleSDK.init(activity!!,apiKey)
+        val userId=call.argument("user_id") as String?
+        if(userId!=null&&userId.isNotEmpty()){
+          BabbleSDK.init(activity!!,userId)
         }else{
           result.error("404","Babble SDK: Please provide valid api key",null)
         }
 
       }
+      "set_customer_id" ->{
+        val customerId=call.argument("customer_id") as String?
+        if(customerId!=null&&customerId.isNotEmpty()){
+          BabbleSDK.setCustomerId(customerId)
+        }else{
+          result.error("404","Babble SDK: Please provide valid trigger",null)
+        }
+
+      }
       "trigger_survey" ->{
         val trigger=call.argument("trigger") as String?
-        val customerId=call.argument("customer_id") as String?
         if(trigger!=null&&trigger.isNotEmpty()){
-          BabbleSDK.triggerSurvey(trigger, customerId)
+          BabbleSDK.triggerSurvey(trigger)
         }else{
           result.error("404","Babble SDK: Please provide valid trigger",null)
         }
@@ -50,11 +58,6 @@ class BabbleSdkPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
         result.notImplemented()
       }
     }
-//    if (call.method == "getPlatformVersion") {
-//      result.success("Android ${android.os.Build.VERSION.RELEASE}")
-//    } else {
-//      result.notImplemented()
-//    }
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

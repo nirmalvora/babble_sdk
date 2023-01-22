@@ -10,12 +10,18 @@ class BabbleUtils {
 
   BabbleUtils._internal();
   Future<void> initBabble() async {
-    babbleSdk.init({"api_key": ""});
+    babbleSdk.init(userId: "TiHprDYCQy9UANrWWcA3");
   }
 
-  Future<void> triggerSurvey(trigger) async {
+  Future<void> triggerSurvey({required String trigger}) async {
     babbleSdk
-        .triggerSurvey({"trigger": trigger, 'customer_id': 'test'}).catchError(
-            (onError) => print(onError));
+        .triggerSurvey(trigger: trigger)
+        .catchError((onError) => print(onError));
+  }
+
+  Future<void> setCustomerId({required String customerId}) async {
+    babbleSdk
+        .setCustomerId(customerId: customerId)
+        .catchError((onError) => print(onError));
   }
 }

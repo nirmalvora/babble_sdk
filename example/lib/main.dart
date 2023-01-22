@@ -17,6 +17,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
+  void initState() {
+    super.initState();
+    BabbleUtils().setCustomerId(customerId: "nirmalvora0910@gmail.com");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -26,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: TextButton(
               onPressed: () {
-                BabbleUtils().triggerSurvey('');
+                BabbleUtils().triggerSurvey(trigger: "test-all-questions");
               },
               child: const Text('Trigger survey')),
         ),
