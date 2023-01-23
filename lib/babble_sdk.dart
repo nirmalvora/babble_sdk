@@ -2,7 +2,7 @@ import 'babble_sdk_platform_interface.dart';
 
 class BabbleSdk {
   Future<void> init({required String userId}) {
-    return BabbleSdkPlatform.instance.init({"user_id": "TiHprDYCQy9UANrWWcA3"});
+    return BabbleSdkPlatform.instance.init({"user_id": userId});
   }
 
   Future<void> triggerSurvey({required String trigger}) {
