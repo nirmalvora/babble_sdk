@@ -9,7 +9,7 @@ class BabbleSdk {
     return BabbleSdkPlatform.instance.triggerSurvey({"trigger": trigger});
   }
 
-  Future<void> setCustomerId({required String customerId}) {
+  Future<void> setCustomerId({required String? customerId}) {
     return BabbleSdkPlatform.instance
         .setCustomerId({"customer_id": customerId});
   }

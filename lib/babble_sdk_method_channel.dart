@@ -20,7 +20,7 @@ class MethodChannelBabbleSdk extends BabbleSdkPlatform {
   }
 
   @override
-  Future<void> setCustomerId(Map<String, String> params) async {
+  Future<void> setCustomerId(Map<String, String?> params) async {
     methodChannel.invokeMethod<void>('set_customer_id', params);
   }
 }

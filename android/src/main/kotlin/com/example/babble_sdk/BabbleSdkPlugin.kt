@@ -38,11 +38,7 @@ class BabbleSdkPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       }
       "set_customer_id" ->{
         val customerId=call.argument("customer_id") as String?
-        if(customerId!=null&&customerId.isNotEmpty()){
-          BabbleSDK.setCustomerId(customerId)
-        }else{
-          result.error("404","Babble SDK: Please provide valid trigger",null)
-        }
+        BabbleSDK.setCustomerId(customerId)
 
       }
       "trigger_survey" ->{
