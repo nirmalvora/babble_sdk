@@ -1,6 +1,6 @@
 name: babble_sdk
 description: Babble SDK for survey.
-version: 0.0.11
+version: 0.0.12
 homepage: https://github.com/nirmalvora/babble_sdk
 
 environment:
@@ -41,15 +41,6 @@ flutter:
         pluginClass: BabbleSdkPlugin
       ios:
         pluginClass: BabbleSdkPlugin
-      linux:
-        pluginClass: BabbleSdkPlugin
-      macos:
-        pluginClass: BabbleSdkPlugin
-      windows:
-        pluginClass: BabbleSdkPluginCApi
-      web:
-        pluginClass: BabbleSdkWeb
-        fileName: babble_sdk_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
