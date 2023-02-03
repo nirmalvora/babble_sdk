@@ -1,10 +1,9 @@
+import 'package:babble_sdk/babble_sdk.dart';
 import 'package:flutter/material.dart';
-
-import 'babble_utils.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  BabbleUtils().initBabble();
+  BabbleSdk.instance.init(userId: "1PilLLqANCHjpAvTUhFt");
   runApp(const MyApp());
 }
 
@@ -19,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    BabbleUtils().setCustomerId(customerId: null);
+    BabbleSdk.instance.setCustomerId(customerId: null);
   }
 
   @override
@@ -32,7 +31,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: TextButton(
               onPressed: () {
-                BabbleUtils().triggerSurvey(trigger: "test3");
+                BabbleSdk.instance.triggerSurvey(trigger: "test3");
               },
               child: const Text('Trigger survey')),
         ),
