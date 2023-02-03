@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    BabbleUtils().setCustomerId(customerId: "cust555");
+    BabbleUtils().setCustomerId(customerId: null);
   }
 
   @override
@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: TextButton(
               onPressed: () {
-                BabbleUtils().triggerSurvey(trigger: "cohort-test-1");
+                BabbleUtils().triggerSurvey(trigger: "test3");
               },
               child: const Text('Trigger survey')),
         ),

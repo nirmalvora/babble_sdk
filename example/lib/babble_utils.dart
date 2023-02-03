@@ -10,7 +10,7 @@ class BabbleUtils {
 
   BabbleUtils._internal();
   Future<void> initBabble() async {
-    babbleSdk.init(userId: "TiHprDYCQy9UANrWWcA3");
+    babbleSdk.init(userId: "1PilLLqANCHjpAvTUhFt");
   }
 
   Future<void> triggerSurvey({required String trigger}) async {
@@ -19,7 +19,7 @@ class BabbleUtils {
         .catchError((onError) => print(onError));
   }
 
-  Future<void> setCustomerId({required String customerId}) async {
+  Future<void> setCustomerId({String? customerId}) async {
     babbleSdk
         .setCustomerId(customerId: customerId)
         .catchError((onError) => print(onError));
