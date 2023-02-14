@@ -1,6 +1,6 @@
 name: babble_sdk
 description: Babble SDK for survey.
-version: 0.0.12
+version: 0.0.13
 homepage: https://github.com/nirmalvora/babble_sdk
 
 environment:
