@@ -15,12 +15,12 @@ class MethodChannelBabbleSdk extends BabbleSdkPlatform {
   }
 
   @override
-  Future<void> triggerSurvey(Map<String, String> params) async {
+  Future<void> triggerSurvey(Map<String, dynamic> params) async {
     methodChannel.invokeMethod<void>('trigger_survey', params);
   }
 
   @override
-  Future<void> setCustomerId(Map<String, String?> params) async {
+  Future<void> setCustomerId(Map<String, dynamic> params) async {
     methodChannel.invokeMethod<void>('set_customer_id', params);
   }
 }

@@ -3,6 +3,7 @@ package com.example.babble_sdk
 import androidx.annotation.NonNull
 import com.babble.babblesdk.BabbleSDK
 import android.app.Activity
+import android.util.Log
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -10,6 +11,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import java.util.HashMap
 
 /** BabbleSdkPlugin */
 class BabbleSdkPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -38,13 +40,15 @@ class BabbleSdkPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       }
       "set_customer_id" ->{
         val customerId=call.argument("customer_id") as String?
-        BabbleSDK.setCustomerId(customerId)
+        val userDetails=call.argument("user_details") as HashMap<String, Any?>?
+        BabbleSDK.setCustomerId(customerId = customerId,userDetails = userDetails)
 
       }
       "trigger_survey" ->{
         val trigger=call.argument("trigger") as String?
+        val properties=call.argument("properties") as HashMap<String, Any?>?
         if(trigger!=null&&trigger.isNotEmpty()){
-          BabbleSDK.triggerSurvey(trigger)
+          BabbleSDK.triggerSurvey(trigger= trigger, properties = properties)
         }else{
           result.error("404","Babble SDK: Please provide valid trigger",null)
         }

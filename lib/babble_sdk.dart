@@ -11,12 +11,15 @@ class BabbleSdk {
     return BabbleSdkPlatform.instance.init({"user_id": userId});
   }
 
-  Future<void> triggerSurvey({required String trigger}) {
-    return BabbleSdkPlatform.instance.triggerSurvey({"trigger": trigger});
+  Future<void> triggerSurvey(
+      {required String trigger, Map<String, dynamic>? properties}) {
+    return BabbleSdkPlatform.instance
+        .triggerSurvey({"trigger": trigger, "properties": properties});
   }
 
-  Future<void> setCustomerId({required String? customerId}) {
-    return BabbleSdkPlatform.instance
-        .setCustomerId({"customer_id": customerId});
+  Future<void> setCustomerId(
+      {required String? customerId, Map<String, dynamic>? userDetails}) {
+    return BabbleSdkPlatform.instance.setCustomerId(
+        {"customer_id": customerId, 'user_details': userDetails});
   }
 }

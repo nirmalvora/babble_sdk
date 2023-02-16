@@ -27,7 +27,7 @@ public class SwiftBabbleSdkPlugin: NSObject, FlutterPlugin {
                result("Babble SDK: Please provide valid customer id");
                return;
            }
-           BabbleSdk.setCustomerId(babbleData["customer_id"] as? String)
+            BabbleSdk.setCustomerId(babbleData["customer_id"] as? String, userDetails: babbleData["user_details"] as? [String : Any])
           
         } else if(call.method == "trigger_survey"){
             guard let babbleData: Dictionary = call.arguments as? [String: Any?] else {
@@ -37,7 +37,7 @@ public class SwiftBabbleSdkPlugin: NSObject, FlutterPlugin {
             if(babbleData["trigger"]==nil || (babbleData["trigger"] as! String).isEmpty){
                 result("Babble SDK: Please provide valid trigger name");
             }else{
-                BabbleSdk.trigger(babbleData["trigger"] as! String)
+                BabbleSdk.trigger(babbleData["trigger"] as! String, properties:  babbleData["properties"] as? [String : Any])
             }
         }else {
             result(FlutterMethodNotImplemented)
