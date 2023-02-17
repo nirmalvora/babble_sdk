@@ -1,8 +1,8 @@
 PODS:
   - babble_sdk (0.0.1):
-    - BabbleiOS (= 0.0.5)
+    - BabbleiOS (= 0.0.6)
     - Flutter
-  - BabbleiOS (0.0.5)
+  - BabbleiOS (0.0.6)
   - Flutter (1.0.0)
 
 DEPENDENCIES:
@@ -20,8 +20,8 @@ EXTERNAL SOURCES:
     :path: Flutter
 
 SPEC CHECKSUMS:
-  babble_sdk: dcebe473a9f45a94028193ca493ee970f6e8c4c5
-  BabbleiOS: b594bd9379b78428a97914e468905f62a773b861
+  babble_sdk: 87f4028e5dcd726fdf8c949d9ef5ce6aba094a11
+  BabbleiOS: 6d9366247d310c49e151821aad695e30f314544c
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
