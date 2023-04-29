@@ -22,4 +22,8 @@ class BabbleSdk {
     return BabbleSdkPlatform.instance.setCustomerId(
         {"customer_id": customerId, 'user_details': userDetails});
   }
+
+  Future<void> cancelSurvey() {
+    return BabbleSdkPlatform.instance.cancelSurvey();
+  }
 }

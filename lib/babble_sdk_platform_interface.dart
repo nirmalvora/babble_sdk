@@ -34,4 +34,8 @@ abstract class BabbleSdkPlatform extends PlatformInterface {
   Future<void> setCustomerId(Map<String, dynamic> params) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<void> cancelSurvey() {
+    throw UnimplementedError('platformVersion() has not been implemented.');
+  }
 }

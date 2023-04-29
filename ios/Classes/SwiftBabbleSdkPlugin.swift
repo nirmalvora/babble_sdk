@@ -39,6 +39,8 @@ public class SwiftBabbleSdkPlugin: NSObject, FlutterPlugin {
             }else{
                 BabbleSdk.trigger(babbleData["trigger"] as! String, properties:  babbleData["properties"] as? [String : Any])
             }
+        }else if(call.method == "close_survey"){
+            BabbleSdk.cancelSurvey()
         }else {
             result(FlutterMethodNotImplemented)
         }

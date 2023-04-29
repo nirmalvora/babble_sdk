@@ -32,29 +32,28 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(
               child: TextButton(
-                  onPressed: () {
-                    // getConfiguration().then((value) async {
-                    //   configuration =
-                    //       GetConfiguration.fromJson(jsonDecode(value.body));
-                    //   print(configuration!.toJson());
-                    //   BabbleSdk.instance.init(userId: configuration!.initId!);
-                    //   await Future.delayed(const Duration(milliseconds: 500));
-                    //   BabbleSdk.instance
-                    //       .setCustomerId(customerId: configuration!.customerId);
-                    // });
-                  },
-                  child: const Text('Get Configuration')),
+                onPressed: () {
+                  BabbleSdk.instance.triggerSurvey(
+                      trigger: 'fintech4', properties: {"test1": "Nirmal"});
+                },
+                child: const Text('Trigger survey'),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Center(
               child: TextButton(
-                  onPressed: () {
-                    BabbleSdk.instance.triggerSurvey(
-                        trigger: 'test3', properties: {"test1": "Nirmal"});
-                  },
-                  child: const Text('Trigger survey')),
+                onPressed: () {
+                  BabbleSdk.instance.cancelSurvey();
+                },
+                child: const Text('Cancel survey'),
+              ),
             ),
           ],
         ),

@@ -23,4 +23,9 @@ class MethodChannelBabbleSdk extends BabbleSdkPlatform {
   Future<void> setCustomerId(Map<String, dynamic> params) async {
     methodChannel.invokeMethod<void>('set_customer_id', params);
   }
+
+  @override
+  Future<void> cancelSurvey() async {
+    methodChannel.invokeMethod<void>('close_survey');
+  }
 }
