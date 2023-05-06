@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
               child: TextButton(
                 onPressed: () {
                   BabbleSdk.instance.triggerSurvey(
-                      trigger: 'fintech4', properties: {"test1": "Nirmal"});
+                      trigger: 'quizz', properties: {"test1": "Nirmal"});
                 },
                 child: const Text('Trigger survey'),
               ),
