@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  BabbleSdk.instance.init(userId: "1PilLLqANCHjpAvTUhFt");
+  BabbleSdk.instance.init(userId: "i4PcUAr4zIzSWDBmSPvE");
   runApp(const MyApp());
 }
 
@@ -20,8 +20,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    BabbleSdk.instance.setCustomerId(
-        customerId: "cust007", userDetails: {"firstname": "Nirmal"});
+    BabbleSdk.instance.setCustomerId(customerId: "");
   }
 
   @override
@@ -39,7 +38,7 @@ class _MyAppState extends State<MyApp> {
               child: TextButton(
                 onPressed: () {
                   BabbleSdk.instance.triggerSurvey(
-                      trigger: 'quizz', properties: {"test1": "Nirmal"});
+                      trigger: 'nps', properties: {"test1": "Nirmal"});
                 },
                 child: const Text('Trigger survey'),
               ),
