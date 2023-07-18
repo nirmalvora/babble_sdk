@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  BabbleSdk.instance.init(userId: "i4PcUAr4zIzSWDBmSPvE");
+  BabbleSdk.instance.init(userId: "1PilLLqANCHjpAvTUhFt");
   runApp(const MyApp());
 }
 
